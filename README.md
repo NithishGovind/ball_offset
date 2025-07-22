@@ -12,17 +12,20 @@ A robot with a flat base is mounted onto a surface via a plate. Due to installat
 - The **Z-height** values (a, b, c, d) at each probe point indicate the deviation from a flat reference.
 - The goal is to calculate how much to **adjust the support screws** at each point to correct the surface and make it level.
 
+## 📥 Input Parameters
 
-## 📄 Sample YAML Configuration
+| Parameter | Type            | Description                                                                 |
+|-----------|-----------------|-----------------------------------------------------------------------------|
+| `points`  | List of tuples or `np.ndarray` | Coordinates and Z-values of 4 probe points. Format: `[(x1, y1, z1), ..., (x4, y4, z4)]` |
+| `x`       | `float`         | X-offset distance from center to A/C (symmetric setup)                      |
+| `y`       | `float`         | Y-offset distance from center to B/D (symmetric setup)                      |
 
+### 🧾 Sample YAML Input
 ```yaml
-robot:
-  name: Maxio
-  probe_points:
-    A: {x: 1, y: 0, z: 100}
-    B: {x: 0, y: 1, z: 110}
-    C: {x: -1, y: 0, z: 114}
-    D: {x: 0, y: -1, z: 104}
-correction:
+probe_points:
+  A: {x:  1.0, y:  0.0, z: 100.0}
+  B: {x:  0.0, y:  1.0, z: 110.0}
+  C: {x: -1.0, y:  0.0, z: 114.0}
+  D: {x:  0.0, y: -1.0, z: 104.0}
   method: least_squares
   plane: z = p*x + q*y + r
