@@ -20,7 +20,7 @@ A robot with a flat base is mounted onto a surface via a plate. Due to installat
 | `x`       | `float`         | X-offset distance from center to A/C (symmetric setup)                      |
 | `y`       | `float`         | Y-offset distance from center to B/D (symmetric setup)                      |
 
-### 🧾 Sample YAML Input
+### 🧾 Input
 ```yaml
 probe_points:
   A: {x:  1.0, y:  0.0, z: 100.0}
