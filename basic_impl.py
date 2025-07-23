@@ -14,7 +14,6 @@ points = np.array([
     [ 0, -y, D]   
 ])
 
-
 X = np.c_[points[:,0], points[:,1], np.ones(4)]
 Z = points[:,2]
 
